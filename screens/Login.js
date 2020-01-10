@@ -9,13 +9,13 @@ import {
   Button,
   StyleSheet,
 } from 'react-native';
-import RoundButton from './components/roundButton';
-import TextField from './components/textfield';
-import LoginLogo from './components/logo';
+import RoundButton from '../components/roundButton';
+import TextField from '../components/textfield';
+import LoginLogo from '../components/logo';
 import {
     storeToken,
     getToken,
-  } from './asyncStorageService'
+  } from '../asyncStorageService'
 
 class Login extends React.Component {
     static navigationOptions =  {
@@ -46,8 +46,8 @@ class Login extends React.Component {
             <View style={styles.container}>
                 <LoginLogo/>
                 {this.state.isInvalid && <Text style={styles.error}>Invalid Credentials</Text>}
-                <TextField onChangeText={email => this.setState({email})} logo={require('./assets/mail.png')} placeholder='email'/>
-                <TextField onChangeText={password => this.setState({password})} logo={require('./assets/password.png')} placeholder='password' isPasswordField />
+                <TextField onChangeText={email => this.setState({email})} logo={require('../assets/mail.png')} placeholder='email'/>
+                <TextField onChangeText={password => this.setState({password})} logo={require('../assets/password.png')} placeholder='password' isPasswordField />
                 <RoundButton text='Login' onPress={this.login}/>
             </View>
           </TouchableWithoutFeedback>

@@ -1,7 +1,7 @@
 import {createSwitchNavigator} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
-import Login from './Login'
-import WebView from './MyWebView'
+import Login from './screens/Login'
+import WebView from './screens/MyWebView'
 import AuthLoader from './screens/AuthLoader'
 
 const loginStack = createStackNavigator({
