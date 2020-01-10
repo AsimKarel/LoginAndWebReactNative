@@ -2,6 +2,7 @@ import {createSwitchNavigator} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 import Login from './Login'
 import WebView from './MyWebView'
+import AuthLoader from './screens/AuthLoader'
 
 const loginStack = createStackNavigator({
   Login: {screen: Login},
@@ -12,10 +13,11 @@ const loggedInStack = createStackNavigator({
 
 export const switchNavigator = createSwitchNavigator(
   {
+    AuthChecker: AuthLoader,
     LoginStack: loginStack,
     WebViewStack: loggedInStack,
   },
   {
-    initialRouteName: 'LoginStack',
+    initialRouteName: 'AuthChecker',
   },
 )

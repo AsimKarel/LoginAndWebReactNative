@@ -27,17 +27,6 @@ class Login extends React.Component {
         isInvalid: false,
     };
 
-    componentWillMount = () => {
-        this.checkIfLoggedIn();
-    }
-
-    checkIfLoggedIn = async () => {
-        const token = await getToken();
-        if(token){
-            this.props.navigation.navigate('Profile',{token:data.data.token})
-        }
-    }
-
     login = ()=>{
         this.setState({isInvalid:false});
         axios.post('https://reqres.in/api/login',this.state)

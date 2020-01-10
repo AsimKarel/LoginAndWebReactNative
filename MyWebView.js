@@ -8,7 +8,11 @@ class MyWebView extends React.Component {
     token = this.props.navigation.state.params.token;
     
     componentDidMount = () => {
-      alert("My token: "+this.token)
+      if(this.token)
+        alert("My token: "+this.token)
+      else{
+        alert("Already logged in")
+      }
     }
     render() {
         return (
